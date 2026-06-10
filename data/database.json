@@ -1,0 +1,421 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "username": "admin",
+      "passwordHash": "$2b$10$bwwgTmADOBhxtBDvNGKbr.5v0RMC0MdbPbI17m2vUEzf4lPhk2lpW",
+      "role": "admin"
+    },
+    {
+      "id": "u2",
+      "username": "customer_john",
+      "passwordHash": "$2b$10$bwwgTmADOBhxtBDvNGKbr.gF6CvXWFA8/znvTGsXAubdTGfQcW2wC",
+      "role": "customer",
+      "customerId": "c1"
+    },
+    {
+      "id": "u3",
+      "username": "customer_emily",
+      "passwordHash": "$2b$10$bwwgTmADOBhxtBDvNGKbr.W.iAM9bzqhapOrWALztKJu.oPrvIJDe",
+      "role": "customer",
+      "customerId": "c2"
+    },
+    {
+      "id": "u_1780980862103",
+      "username": "ashi256259",
+      "passwordHash": "$2b$10$nbW/QB9HuBlgecXxmoX/Sux2K782Hof4A7HQibT2ygYPVObNv5reO",
+      "role": "customer",
+      "customerId": "c_1780980861968"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "r1",
+      "roomNumber": "101",
+      "roomType": "Standard",
+      "pricePerNight": 80,
+      "capacity": 2,
+      "status": "Occupied",
+      "imageUrl": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "r2",
+      "roomNumber": "102",
+      "roomType": "Standard",
+      "pricePerNight": 80,
+      "capacity": 2,
+      "status": "Available",
+      "imageUrl": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "r3",
+      "roomNumber": "201",
+      "roomType": "Deluxe",
+      "pricePerNight": 150,
+      "capacity": 3,
+      "status": "Occupied",
+      "imageUrl": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "r4",
+      "roomNumber": "202",
+      "roomType": "Deluxe",
+      "pricePerNight": 150,
+      "capacity": 3,
+      "status": "Available",
+      "imageUrl": "https://images.unsplash.com/photo-1611891404114-5090bc910af7?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "r5",
+      "roomNumber": "301",
+      "roomType": "Suite",
+      "pricePerNight": 300,
+      "capacity": 4,
+      "status": "Occupied",
+      "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "r6",
+      "roomNumber": "302",
+      "roomType": "Suite",
+      "pricePerNight": 300,
+      "capacity": 4,
+      "status": "Available",
+      "imageUrl": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "r7",
+      "roomNumber": "103",
+      "roomType": "Standard",
+      "pricePerNight": 90,
+      "capacity": 2,
+      "status": "Available",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "r8",
+      "roomNumber": "203",
+      "roomType": "Deluxe",
+      "pricePerNight": 160,
+      "capacity": 2,
+      "status": "Available",
+      "imageUrl": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "customers": [
+    {
+      "id": "c1",
+      "name": "John Doe",
+      "phone": "+1 555-0199",
+      "email": "john.doe@gmail.com",
+      "address": "123 Pine St, Seattle, WA"
+    },
+    {
+      "id": "c2",
+      "name": "Emily Watson",
+      "phone": "+1 555-0144",
+      "email": "emily.w@yahoo.com",
+      "address": "456 Oak Rd, Portland, OR"
+    },
+    {
+      "id": "c3",
+      "name": "Robert Downey",
+      "phone": "+1 555-0122",
+      "email": "robert.d@marvel.com",
+      "address": "789 Malibu Dr, Los Angeles, CA"
+    },
+    {
+      "id": "c4",
+      "name": "Scarlett Johansson",
+      "phone": "+1 555-0177",
+      "email": "scarlett.j@gmail.com",
+      "address": "101 Broadway, New York, NY"
+    },
+    {
+      "id": "c5",
+      "name": "Chris Evans",
+      "phone": "+1 555-0188",
+      "email": "chris.e@boston.com",
+      "address": "222 Freedom Blvd, Boston, MA"
+    },
+    {
+      "id": "c_1780980861968",
+      "name": "ashish singh",
+      "phone": "63881453133",
+      "email": "ashi256259@gmail.com",
+      "address": "KATAIYA  DANDI BARGARH MAU\nKATAIYA DANDI BARGARH MAU"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "b1",
+      "customerId": "c1",
+      "roomNumber": "101",
+      "checkInDate": "2026-06-01",
+      "checkOutDate": "2026-06-05",
+      "numberOfDays": 4,
+      "totalAmount": 320,
+      "status": "Checked-In",
+      "createdAt": "2026-05-25T10:00:00.000Z"
+    },
+    {
+      "id": "b2",
+      "customerId": "c2",
+      "roomNumber": "201",
+      "checkInDate": "2026-06-03",
+      "checkOutDate": "2026-06-10",
+      "numberOfDays": 7,
+      "totalAmount": 1050,
+      "status": "Checked-In",
+      "createdAt": "2026-05-28T14:30:00.000Z"
+    },
+    {
+      "id": "b3",
+      "customerId": "c3",
+      "roomNumber": "301",
+      "checkInDate": "2026-06-05",
+      "checkOutDate": "2026-06-08",
+      "numberOfDays": 3,
+      "totalAmount": 900,
+      "status": "Checked-In",
+      "createdAt": "2026-06-01T09:12:00.000Z"
+    },
+    {
+      "id": "b4",
+      "customerId": "c4",
+      "roomNumber": "102",
+      "checkInDate": "2026-05-15",
+      "checkOutDate": "2026-05-18",
+      "numberOfDays": 3,
+      "totalAmount": 240,
+      "status": "Checked-Out",
+      "createdAt": "2026-05-10T11:00:00.000Z"
+    },
+    {
+      "id": "b5",
+      "customerId": "c5",
+      "roomNumber": "202",
+      "checkInDate": "2026-05-20",
+      "checkOutDate": "2026-05-25",
+      "numberOfDays": 5,
+      "totalAmount": 750,
+      "status": "Checked-Out",
+      "createdAt": "2026-05-18T16:20:00.000Z"
+    },
+    {
+      "id": "b6",
+      "customerId": "c1",
+      "roomNumber": "302",
+      "checkInDate": "2026-06-12",
+      "checkOutDate": "2026-06-15",
+      "numberOfDays": 3,
+      "totalAmount": 900,
+      "status": "Booked",
+      "createdAt": "2026-06-07T08:00:00.000Z"
+    }
+  ],
+  "foodItems": [
+    {
+      "id": "f1",
+      "foodName": "Crispy Spring Rolls",
+      "category": "Starter",
+      "price": 320,
+      "availability": true,
+      "imageUrl": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "id": "f2",
+      "foodName": "Paneer Tikka Kebab",
+      "category": "Starter",
+      "price": 450,
+      "availability": true
+    },
+    {
+      "id": "f3",
+      "foodName": "Chicken Alfredo Pasta",
+      "category": "Main Course",
+      "price": 650,
+      "availability": true
+    },
+    {
+      "id": "f4",
+      "foodName": "Cheeseburger & Fries",
+      "category": "Main Course",
+      "price": 480,
+      "availability": true
+    },
+    {
+      "id": "f5",
+      "foodName": "Hot Fudge Chocolate Brownie",
+      "category": "Dessert",
+      "price": 300,
+      "availability": true
+    },
+    {
+      "id": "f6",
+      "foodName": "Mango Cheesecake Slice",
+      "category": "Dessert",
+      "price": 350,
+      "availability": true
+    },
+    {
+      "id": "f7",
+      "foodName": "Iced Caramel Macchiato",
+      "category": "Beverage",
+      "price": 220,
+      "availability": true
+    },
+    {
+      "id": "f8",
+      "foodName": "Fresh Watermelon Mojito",
+      "category": "Beverage",
+      "price": 250,
+      "availability": true
+    },
+    {
+      "id": "f9",
+      "foodName": "Sizzling Garlic Ribeye Steak",
+      "category": "Main Course",
+      "price": 1250,
+      "availability": true
+    }
+  ],
+  "foodOrders": [
+    {
+      "id": "o1",
+      "customerId": "c1",
+      "items": [
+        {
+          "foodItemId": "f4",
+          "foodName": "Cheeseburger & Fries",
+          "quantity": 2,
+          "price": 480
+        },
+        {
+          "foodItemId": "f8",
+          "foodName": "Fresh Watermelon Mojito",
+          "quantity": 2,
+          "price": 250
+        }
+      ],
+      "quantity": 4,
+      "totalAmount": 1460,
+      "status": "Served",
+      "orderDate": "2026-06-04T12:30:00.000Z"
+    },
+    {
+      "id": "o2",
+      "customerId": "c2",
+      "items": [
+        {
+          "foodItemId": "f3",
+          "foodName": "Chicken Alfredo Pasta",
+          "quantity": 1,
+          "price": 650
+        },
+        {
+          "foodItemId": "f7",
+          "foodName": "Iced Caramel Macchiato",
+          "quantity": 1,
+          "price": 220
+        },
+        {
+          "foodItemId": "f5",
+          "foodName": "Hot Fudge Chocolate Brownie",
+          "quantity": 1,
+          "price": 300
+        }
+      ],
+      "quantity": 3,
+      "totalAmount": 1170,
+      "status": "Served",
+      "orderDate": "2026-06-06T19:15:00.000Z"
+    },
+    {
+      "id": "o3",
+      "customerId": "c3",
+      "items": [
+        {
+          "foodItemId": "f9",
+          "foodName": "Sizzling Garlic Ribeye Steak",
+          "quantity": 2,
+          "price": 1250
+        },
+        {
+          "foodItemId": "f8",
+          "foodName": "Fresh Watermelon Mojito",
+          "quantity": 3,
+          "price": 250
+        }
+      ],
+      "quantity": 5,
+      "totalAmount": 3250,
+      "status": "Served",
+      "orderDate": "2026-06-08T18:00:00.000Z"
+    },
+    {
+      "id": "o_1780982997878",
+      "customerId": "c2",
+      "items": [
+        {
+          "foodItemId": "f7",
+          "foodName": "Iced Caramel Macchiato",
+          "quantity": 1,
+          "price": 220
+        }
+      ],
+      "quantity": 1,
+      "totalAmount": 220,
+      "status": "Pending",
+      "orderDate": "2026-06-09T05:29:57.878Z"
+    }
+  ],
+  "bills": [
+    {
+      "id": "bill_b4",
+      "invoiceNumber": "INV-2026-0001",
+      "invoiceDate": "2026-05-18T11:05:00.000Z",
+      "customerId": "c4",
+      "bookingId": "b4",
+      "roomCharges": 16500,
+      "foodCharges": 0,
+      "gstAmount": 2970,
+      "grandTotal": 19470,
+      "status": "Paid"
+    },
+    {
+      "id": "bill_b5",
+      "invoiceNumber": "INV-2026-0002",
+      "invoiceDate": "2026-05-25T16:30:00.000Z",
+      "customerId": "c5",
+      "bookingId": "b5",
+      "roomCharges": 60000,
+      "foodCharges": 0,
+      "gstAmount": 10800,
+      "grandTotal": 70800,
+      "status": "Paid"
+    }
+  ],
+  "reviews": [],
+  "housekeepingTasks": [],
+  "complaints": [],
+  "emergencyAlerts": [],
+  "visitorRequests": [],
+  "lostItemReports": [],
+  "feedbacks": [],
+  "employeeAttendance": [],
+  "inventoryItems": [
+    {
+      "id": "iv-1780981741593-4460",
+      "itemName": "rice",
+      "category": "Kitchen Stock",
+      "quantity": 0,
+      "unit": "KG",
+      "lowStockThreshold": 10,
+      "supplierName": "delta",
+      "supplierPhone": "6388145313",
+      "supplierEmail": "ashi256259@gmail.com",
+      "updatedAt": "2026-06-09T05:09:01.593Z"
+    }
+  ]
+}

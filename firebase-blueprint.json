@@ -1,0 +1,156 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Authentication and authorization profile info",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "customer"] },
+        "customerId": { "type": "string" }
+      },
+      "required": ["id", "username", "role"]
+    },
+    "Room": {
+      "title": "Room",
+      "description": "Information about a suite, room availability, and price",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "roomType": { "type": "string", "enum": ["Standard", "Deluxe", "Suite"] },
+        "pricePerNight": { "type": "number" },
+        "capacity": { "type": "number" },
+        "status": { "type": "string", "enum": ["Available", "Occupied"] },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["id", "roomNumber", "roomType", "pricePerNight", "capacity", "status"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Customer demographic and contact details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "address": { "type": "string" }
+      },
+      "required": ["id", "name", "phone", "email"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Room reservation records for check-in and check-out tracking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerId": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "checkInDate": { "type": "string" },
+        "checkOutDate": { "type": "string" },
+        "numberOfDays": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["Booked", "Checked-In", "Checked-Out", "Cancelled"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "customerId", "roomNumber", "checkInDate", "checkOutDate", "numberOfDays", "totalAmount", "status"]
+    },
+    "FoodItem": {
+      "title": "FoodItem",
+      "description": "Menu listing of available restaurant dishes and prices",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "foodName": { "type": "string" },
+        "category": { "type": "string", "enum": ["Starter", "Main Course", "Dessert", "Beverage"] },
+        "price": { "type": "number" },
+        "availability": { "type": "boolean" }
+      },
+      "required": ["id", "foodName", "category", "price", "availability"]
+    },
+    "FoodOrder": {
+      "title": "FoodOrder",
+      "description": "Room service dining order details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerId": { "type": "string" },
+        "items": { "type": "array" },
+        "quantity": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["Pending", "Served", "Cancelled"] },
+        "orderDate": { "type": "string" }
+      },
+      "required": ["id", "customerId", "items", "quantity", "totalAmount", "status", "orderDate"]
+    },
+    "Bill": {
+      "title": "Bill",
+      "description": "Settle invoices and payment details of rooms and dining orders",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "invoiceNumber": { "type": "string" },
+        "invoiceDate": { "type": "string" },
+        "customerId": { "type": "string" },
+        "bookingId": { "type": "string" },
+        "roomCharges": { "type": "number" },
+        "foodCharges": { "type": "number" },
+        "gstAmount": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "status": { "type": "string", "enum": ["Paid", "Unpaid"] }
+      },
+      "required": ["id", "invoiceNumber", "invoiceDate", "customerId", "roomCharges", "foodCharges", "gstAmount", "grandTotal", "status"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Star ratings and textual reviews left by hotel guests",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "roomNumber": { "type": "string" },
+        "customerId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "roomNumber", "customerId", "customerName", "rating", "comment", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Store all individual hotel customer authentication details"
+    },
+    "/rooms/{roomId}": {
+      "schema": "Room",
+      "description": "Store individual suites, features and status conditions"
+    },
+    "/customers/{customerId}": {
+      "schema": "Customer",
+      "description": "Hotel customer profiles details (PII and names)"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Hotel check-in booking transactions"
+    },
+    "/foodItems/{foodItemId}": {
+      "schema": "FoodItem",
+      "description": "Suite dining room service kitchen menu items"
+    },
+    "/foodOrders/{orderId}": {
+      "schema": "FoodOrder",
+      "description": "Customer dining orders list records"
+    },
+    "/bills/{billId}": {
+      "schema": "Bill",
+      "description": "Dynamic bills and paid invoice receipts state"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Customer rating evaluations on suites"
+    }
+  }
+}

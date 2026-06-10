@@ -1,0 +1,6 @@
+{
+  "name": "Hotel & Restaurant Management System",
+  "description": "A comprehensive, production-ready Hotel & Restaurant Management System with Admin and Customer portals. Features room and customer management, bookings, restaurant menu, order system, dynamic billing engine with PDF/Print, reports and analytics dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
