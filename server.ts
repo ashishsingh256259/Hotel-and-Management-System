@@ -11,7 +11,10 @@ import { DB } from './src/backend/db';
 import { Room, Customer, Booking, FoodItem, FoodOrder, Bill, User, HousekeepingTask, Complaint, EmergencyAlert, VisitorRequest, LostItemReport, Feedback, EmployeeAttendance, InventoryItem, Employee, AppNotification, MaintenanceRequest, EmailLog } from './src/types';
 
 // JWT Secret Key
-const JWT_SECRET = process.env.JWT_SECRET || 'hotel_super_secret_jwt_key_2026';
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET || JWT_SECRET.length < 32) {
+  throw new Error('JWT_SECRET must be set to a cryptographically random secret of at least 32 characters.');
+}
 
 const app = express();
 app.use(express.json());
