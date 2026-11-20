@@ -1,0 +1,26 @@
+name: Security patch checks
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [security/jwt-secret-required-20261121]
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm run lint
+      - run: npm run build
+      - name: Reject missing JWT secret at startup
+        shell: bash
+        run: |
+          set +e
+          env -u JWT_SECRET timeout 12s npm run start > /tmp/jwt-startup.log 2>&1
+          code=$?
+          cat /tmp/jwt-startup.log
+          if [ "$code" -eq 124 ]; then echo 'Server did not fail closed'; exit 1; fi
+          grep -q 'JWT_SECRET must be set' /tmp/jwt-startup.log
